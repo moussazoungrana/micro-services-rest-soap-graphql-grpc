@@ -1,4 +1,4 @@
-package net.moz.customerservice.web.rest;
+package net.moz.customerservice.web;
 
 import lombok.AllArgsConstructor;
 import net.moz.customerservice.entities.Customer;
@@ -24,6 +24,7 @@ public class CustomerRestController {
 
     @PostMapping("/customers")
     public Customer saveCustomer(@RequestBody Customer customer) {
-       return customerRepository.save(customer);
+        customerRepository.save(customer);
+        return customer;
     }
 }
